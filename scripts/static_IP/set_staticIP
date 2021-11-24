@@ -1,0 +1,16 @@
+#!/bin/bash
+
+wl1="interface wlan0"
+wIP=$1
+mask="/24"
+wl2="static ip_address="$IP$mask
+wl3="static routers=192.168.254.254"
+wl4="static domain_name_servers=192.168.254.254 8.8.8.8"
+
+el1="interface eth0"
+eIP=$2
+el2="static ip_addresses="$IP$mask
+el3="static routers=192.168.254.254"
+el4="static domain_name_servers=192.168.254.254  8.8.8.8"
+
+echo -e "\n"$wl1"\n"$wl2"\n"$wl3"\n"$wl4"\n""\n"$el1"\n"$el2"\n"$el3"\n"$el4 >> /etc/dhcpcd.conf

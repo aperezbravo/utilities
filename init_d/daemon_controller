@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PID=./pid_file.txt
+
+case $1 in
+
+	start)
+		if [ -e $PID ]
+		then
+			echo "file exists"
+		fi
+esac

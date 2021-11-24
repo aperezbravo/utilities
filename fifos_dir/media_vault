@@ -1,0 +1,49 @@
+#!/bin/bash
+
+
+echo "#############################################################################"
+
+for i in {1..10}
+
+do
+	printf "\rconnecting to resources... $i"
+	printf "%%"
+	sleep .09
+done
+
+printf "\n"
+echo "#############################################################################"
+
+#basename strips the pathname and prints the file name alone
+#for file in black/* 
+#do
+	#basename $file
+#done
+
+
+#while [ "$cmd" != "exit" ];
+#while [ "read cmd" ]
+#do
+	#read from named pipe
+	#read cmd
+	
+	#if [ "$cmd" == "exit" ];
+	#then
+		#break;
+	#else
+		#"${cmd}" >> myfifo;
+	#fi
+
+#done
+
+pipe=bash_in
+while true
+do
+	if read line <$pipe; then
+		if [[ "$line" == "quit" ]]; then
+			break
+		else
+			"${line}"; >> bash_out;
+		fi
+	fi
+done

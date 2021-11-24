@@ -1,0 +1,21 @@
+#!/bin/bash
+
+program_installations=$false
+IP_config=$false
+
+echo "Setup config ..."
+echo "Would you like to install all programs [Y/N]?"
+read input
+if [ $input == "Y" ]
+then
+	program_installations=$true
+fi
+echo "Would you like to set static IP's [Y/N]?"
+read input
+
+if [ $input == "Y" ]
+then
+	IP_config=$true
+fi
+
+#echo $input

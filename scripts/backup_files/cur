@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+file_name=$1
+file_path=$(pwd)"/""$1"
+new_file_path=$2
+#read file
+echo $file_path
+echo moving $1 to $2
